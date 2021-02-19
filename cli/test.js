@@ -19,11 +19,11 @@ const DEFAULT_ITEM_ATUALIZAR = {
 describe('Bem-vindo à Suíte de manipulação de Herois', () => {
 
     before(async () => {
-       await database.cadastrar(DEFAULT_ITEM_CADASTRAR)
+       //await database.cadastrar(DEFAULT_ITEM_CADASTRAR)
        //await database.cadastrar(DEFAULT_ITEM_ATUALIZAR)
     })
 
-    it('01. Deve listar um heroi usando arquivos', async () => {
+    it.only('01. Deve listar um heroi usando arquivos', async () => {
         const expected = DEFAULT_ITEM_CADASTRAR
         const [resultado] = await database.listar(expected.id)
         //const posicaoUm = resultado[0]
@@ -33,7 +33,7 @@ describe('Bem-vindo à Suíte de manipulação de Herois', () => {
         console.log('resultado: ', resultado)
     })
     
-    it.only('02. Deve cadastrar um heroi, usando arquivos', async () => {
+    it('02. Deve cadastrar um heroi, usando arquivos', async () => {
 
         const expected = DEFAULT_ITEM_CADASTRAR
         // const expected = {
@@ -50,7 +50,7 @@ describe('Bem-vindo à Suíte de manipulação de Herois', () => {
 
     })
 
-    it('03. Deve remover o heroi por id', async() => {
+    it.only('03. Deve remover o heroi por id', async() => {
         const expected = true
         const resultado = await database.remover(DEFAULT_ITEM_CADASTRAR.id)
         deepStrictEqual(resultado, expected)
