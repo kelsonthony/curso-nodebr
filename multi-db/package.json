@@ -1,0 +1,12 @@
+{
+  "name": "multi-db",
+  "version": "1.0.0",
+  "description": "# comandos $ docker ps firewall-cmd ––permanent ––add-port=80/tcp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
