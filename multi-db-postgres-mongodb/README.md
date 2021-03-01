@@ -42,7 +42,7 @@ docker run \
     -d \
     mongo:4
 ## Start MongoDB
-docker rrun -p 27017:27017 mongodb
+docker run -p 27017:27017 mongodb
 
 ## Mongo Client
 docker run \
