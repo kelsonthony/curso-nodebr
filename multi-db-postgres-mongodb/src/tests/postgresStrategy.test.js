@@ -14,7 +14,7 @@ const MOCK_HEROI_ATUALIZAR = {
     poder: 'Dinheiro'
 }
 
-describe('Postgres Strategy', function() {
+describe('Postgres Strategy Postgres', function() {
     this.timeout(Infinity)
     this.beforeAll(async () => {
         await context.connect()
@@ -22,23 +22,23 @@ describe('Postgres Strategy', function() {
         await context.create(MOCK_HEROI_ATUALIZAR)
         
     })
-    it('PostgresSQL Connection',  async function() {
+    it('Conexão PostgresSQL',  async function() {
         const result = await context.isConnected()
         assert.deepStrictEqual(result, true)
     })
-    it('Cadastrar Heroi', async function() {
+    it('Cadastrar Heroi Postgres', async function() {
         const result = await context.create(MOCK_HEROI_CADASTRAR)
         console.log('result', result)
         delete result.id
         assert.deepStrictEqual(result, MOCK_HEROI_CADASTRAR)
     })
-    it('Listar Herois', async () => {
+    it('Listar Herois Postgres', async () => {
         const [result] = await context.read({nome: MOCK_HEROI_CADASTRAR.nome})
         delete result.id
         assert.deepStrictEqual(result, MOCK_HEROI_CADASTRAR)
     });
 
-    it('Atualizar o Heroi',  async () => {
+    it('Atualizar o Heroi Postgres',  async () => {
         const [itemAtualizar] = await context.read({ nome: MOCK_HEROI_ATUALIZAR.nome })
         const novoItem = {
             ...MOCK_HEROI_ATUALIZAR,
@@ -51,7 +51,7 @@ describe('Postgres Strategy', function() {
         
     });
 
-    it('Remover Heori por Id', async () => {
+    it('Remover Heori por Id Postgres', async () => {
         const [item] = await context.read({})
         const result = await context.delete(item.id)
         assert.deepStrictEqual(result, 1)
