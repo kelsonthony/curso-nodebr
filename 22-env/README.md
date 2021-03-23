@@ -81,7 +81,3 @@ npm i vision inert hapi-swagger
 npm i jsonwebtoken
 npm i hapi-auth-jwt2
 npm i bcrypt 
-
-
-jest
-26.6.3
